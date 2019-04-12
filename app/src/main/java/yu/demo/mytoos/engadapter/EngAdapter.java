@@ -2,6 +2,8 @@ package yu.demo.mytoos.engadapter;
 
 import com.alibaba.fastjson.JSON;
 
+import java.io.File;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -15,6 +17,7 @@ import java.util.regex.Pattern;
 
 import yu.demo.mytoos.engadapter.net.Controller;
 import yu.demo.mytoos.engadapter.net.SHA256Util;
+import yu.demo.mytoos.fast.utils.IOUtil;
 
 public class EngAdapter {
 
@@ -32,9 +35,23 @@ public class EngAdapter {
         return null;
     }
 
-    public static final String API_ID = "32115254eac26651";
-    public static final String API_KEY = "FGirnZw6wMbPUJYMC1G8VsX3oHzYD3q7";
+    public static String API_ID;
+    public static String API_KEY;
     public static final String API_URL = "http://openapi.youdao.com/api";
+
+
+    static {
+        File file = new File("privateConfig.json");
+        YoudaoApi youdaoApi = null;
+        try {
+            youdaoApi = JSON.parseObject(IOUtil.getFileContent(file), YoudaoApi.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        API_ID = youdaoApi.youdaoAppId;
+        API_KEY = youdaoApi.youdaoAppKey;
+
+    }
 
     public static void dpGet (final Controller api, final int index, final List<String> all) {
         if (index % 2 == 0) {
@@ -307,4 +324,7 @@ public class EngAdapter {
             return translation != null && !translation.isEmpty() ? translation.get(0) : def;
         }
     }
+
+
 }
+
