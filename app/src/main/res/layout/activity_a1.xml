@@ -6,20 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".testcloseres.A2Activity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="MainActivity"/>
+        android:text="A1Activity"/>
 
     <Button
         android:layout_width="match_parent"
-        android:onClick="toA1"
+        android:onClick="toA2"
         android:layout_height="wrap_content"
-        android:text="toA1 Activity"
+        android:text="toA2 Activity"
         android:textAllCaps="false"/>
+
 
 </LinearLayout>

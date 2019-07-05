@@ -6,20 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".testcloseres.A2Activity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="MainActivity"/>
+        android:text="A2Activity"/>
 
     <Button
         android:layout_width="match_parent"
-        android:onClick="toA1"
         android:layout_height="wrap_content"
-        android:text="toA1 Activity"
-        android:textAllCaps="false"/>
+        android:onClick="addRes"
+        android:text="addRes"/>
+
 
 </LinearLayout>

@@ -17,7 +17,7 @@ import yu.demo.mytoos.fast.utils.IOUtil;
 public class FastRunner {
 
     public static void main (String[] args) {
-        FastRunner fastRunner = new FastRunner("C:\\Users\\Administrator\\Downloads\\demo\\test\\smartTable-master");
+        FastRunner fastRunner = new FastRunner("C:\\Users\\Administrator\\Downloads\\demo\\imgedit\\ImageEditor-Android-master");
         fastRunner.addTask(new BuildGradleFast())
                 .addTask(new GradlePropertiesFast())
                 .addTask(new GradleWrapperPropertiesFast());
