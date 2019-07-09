@@ -11,8 +11,18 @@ public class WorkLog {
     //0 未开始 100 完成 -1 进行中
     private int progress = 100;
     private String remarks;
+    private boolean fromGitLib = false;
 
     public WorkLog () {
+    }
+
+    public boolean isFromGitLib () {
+        return fromGitLib;
+    }
+
+    public WorkLog setFromGitLib (boolean fromGitLib) {
+        this.fromGitLib = fromGitLib;
+        return this;
     }
 
     public WorkLog (String id, String name) {
@@ -75,7 +85,8 @@ public class WorkLog {
 
     @Override
     public String toString () {
-        return String.format(Locale.getDefault(), "* %s [#%s](http://r.yonglang.co/issues/%s) %s %s"
-                , name, id, id, getProgressString(), getRemarks());
+        String temp = fromGitLib ? "* %s [#%s](http://g.wowodx.com/yans/wowoandroid-androidstudio/issues/%s) %s %s" :
+                "* %s [#%s](http://r.yonglang.co/issues/%s) %s %s";
+        return String.format(Locale.getDefault(), temp, name, id, id, getProgressString(), getRemarks());
     }
 }
