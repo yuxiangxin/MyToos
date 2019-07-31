@@ -8,6 +8,8 @@ public interface IHttpResponse {
 
     void onSuccess (Request req, Response cache);
 
+    void onCancel (Request req);
+
     void onFailed (Request req, Response cache);
 
     void onCompleted (Request req);

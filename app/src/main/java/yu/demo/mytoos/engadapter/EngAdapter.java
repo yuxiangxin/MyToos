@@ -149,17 +149,14 @@ public class EngAdapter {
 
     public static void main (String[] arg) {
         mController = new Controller();
-        String edText = "<string name=\"word_un_save\">不保存</string>\n" +
-                "    <string name=\"space_create_edit_config_save\">保存此次编辑？</string>\n" +
-                "    <string name=\"word_comment\">回复</string>\n" +
-                "    <string name=\"space_content_pic_count\">%d图</string>\n" +
-                "    <string name=\"reply_total_comment_count\">总共%s条回复>></string>\n" +
-                "    <string name=\"content_somecount_comments\">%d条评论</string>\n" +
-                "    <string name=\"word_i\">我</string>\n" +
-                "    <string name=\"word_likeed\">喜欢过</string>\n" +
-                "    <string name=\"people_like_too\">人都喜欢</string>\n" +
-                "    <string name=\"word_etc\">等</string>\n" +
-                "    <string name=\"space_content_total_pic_count\">共%d张</string>";
+        String edText = "<string name=\"word_knowledge_rays\">知识宇宙</string>\n" +
+                "    <string name=\"word_recommend_space_station\">推荐空间站</string>\n" +
+                "    <string name=\"word_report_succ\">投诉成功</string>\n" +
+                "    <string name=\"report_reason\">投诉原因</string>\n" +
+                "    <string name=\"word_not_null\">必填</string>\n" +
+                "    <string name=\"report_content\">投诉内容</string>\n" +
+                "    <string name=\"report_content_edit_hint\">请详细描述投诉内容并上传相关截图凭证，小卧将秉公处理~</string>\n" +
+                "    <string name=\"report_add_img\">添加凭证</string>";
         String[] split = edText.split("\n");
         ArrayList<String> allContent = new ArrayList<>();
         Collections.addAll(allContent, split);

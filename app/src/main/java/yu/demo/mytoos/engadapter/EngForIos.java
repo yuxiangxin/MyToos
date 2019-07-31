@@ -9,9 +9,11 @@ import yu.demo.mytoos.fast.utils.IOUtil;
 
 public class EngForIos {
 
-    public static final String egPath = "C:\\Users\\Administrator\\Desktop\\eng\\en\\strings.xml";
+    public static final String egPath = "E:\\wowoyi\\wowo2.0\\app\\src\\main\\res\\values-en\\strings.xml";
 
-    public static final String zhPath = "C:\\Users\\Administrator\\Desktop\\eng\\zh\\strings.xml";
+    public static final String zhPath = "E:\\wowoyi\\wowo2.0\\app\\src\\main\\res\\values\\strings.xml";
+
+    public static final String targetPath = "C:\\Users\\Administrator\\Desktop\\xml4ios";
 
     public static final String egTargetName = "strings4ios.xml";
     //"<string name=\"app_name\">Wowo</string>"
@@ -19,12 +21,12 @@ public class EngForIos {
     static String matchRegex = "<string name=.+\\\">.+</";
 
     public static void main (String[] args) {
-        toIos(egPath, egTargetName);
-        toIos(zhPath, egTargetName);
+        toIos(egPath, "en_"+egTargetName);
+        toIos(zhPath, "zh_"+egTargetName);
     }
 
     public static void toIos (String srcPath, String targetName) {
-        File target = new File(new File(srcPath).getParent(), targetName);
+        File target = new File(targetPath, targetName);
         if (target.exists()) {
             target.delete();
         }

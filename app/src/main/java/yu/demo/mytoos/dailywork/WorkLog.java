@@ -30,6 +30,40 @@ public class WorkLog {
         this.name = name;
     }
 
+    public static WorkLog format (String gitCommit) {
+        WorkLog workLog = new WorkLog();
+        if (gitCommit.contains("#")) {
+            String[] split = split(gitCommit, "#");
+            String status = split[0];
+            String[] contentSplit = split(split[1], " ");
+            workLog.setId(contentSplit[0]);
+            if (contentSplit[0].length() < 5) {
+                workLog.setFromGitLib(true);
+            }
+            workLog.setName(contentSplit[1]);
+
+            switch (status) {
+                case "ok":
+                    workLog.setProgress(100);
+                    break;
+                case "refs":
+                    workLog.setProgress(100);
+                    break;
+                case "start":
+                    workLog.setProgress(10);
+                    break;
+            }
+        } else {
+            throw new RuntimeException("not support text");
+        }
+        return workLog;
+    }
+
+    private static String[] split (String content, String split) {
+        int index = content.indexOf(split);
+        return new String[]{content.substring(0, index), content.substring(index + 1, content.length())};
+    }
+
     public String getId () {
         return id;
     }
