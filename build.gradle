@@ -19,6 +19,11 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'http://nexus.wowodx.com/content/groups/public/' }
+        maven { url 'https://jitpack.io' }
+        maven { url "https://maven.google.com" }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/releases/' }
+        maven { url 'https://dl.bintray.com/umsdk/release' }
     }
 }
 
@@ -28,7 +33,7 @@ task clean(type: Delete) {
 
 ext {
     compileSdkVersion = 28
-    minSdkVersion = 16
+    minSdkVersion = 17
     targetSdkVersion = 28
     supportLibraryVersion = '28.0.2'
 }

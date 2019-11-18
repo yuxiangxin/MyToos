@@ -16,10 +16,16 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Reader;
 import java.io.Writer;
+import java.text.DecimalFormat;
 
 public class IOUtil {
 
-    public static final String UTF_8 = "UTF-8";
+    private static final String UTF_8 = "UTF-8";
+    private static final long SIZE_BITE = 1024;
+    private static final long SIZE_KB = SIZE_BITE * SIZE_BITE;
+    private static final long SIZE_MB = SIZE_KB * SIZE_BITE;
+    private static final long SIZE_GB = SIZE_MB * SIZE_BITE;
+    private static final long SIZE_TB = SIZE_GB * SIZE_BITE;
 
 
     public static void streamReadWrite (BufferedInputStream in, BufferedOutputStream out) throws IOException {
@@ -164,4 +170,23 @@ public class IOUtil {
             }
         }
     }
+
+    public static String formatFileLength (long size) {
+        DecimalFormat formater = new DecimalFormat("####.00");
+        if (size < SIZE_BITE) {
+            return size + "bytes";
+        } else if (size < SIZE_KB) {
+            float kbsize = size / 1024f;
+            return formater.format(kbsize) + "KB";
+        } else if (size < SIZE_MB) {
+            float mbsize = size / 1024f / 1024f;
+            return formater.format(mbsize) + "MB";
+        } else /*if (size < SIZE_GB)*/ {
+            float gbsize = size / 1024f / 1024f / 1024f;
+            return formater.format(gbsize) + "GB";
+        }/* else {
+            return "size: error:" + size;
+        }*/
+    }
+
 }

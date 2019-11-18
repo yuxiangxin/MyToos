@@ -149,14 +149,11 @@ public class EngAdapter {
 
     public static void main (String[] arg) {
         mController = new Controller();
-        String edText = "<string name=\"word_knowledge_rays\">知识宇宙</string>\n" +
-                "    <string name=\"word_recommend_space_station\">推荐空间站</string>\n" +
-                "    <string name=\"word_report_succ\">投诉成功</string>\n" +
-                "    <string name=\"report_reason\">投诉原因</string>\n" +
-                "    <string name=\"word_not_null\">必填</string>\n" +
-                "    <string name=\"report_content\">投诉内容</string>\n" +
-                "    <string name=\"report_content_edit_hint\">请详细描述投诉内容并上传相关截图凭证，小卧将秉公处理~</string>\n" +
-                "    <string name=\"report_add_img\">添加凭证</string>";
+        String edText ="    <string name=\"word_mgr\">管理</string>\n" +
+                "    <string name=\"book_my_shelf\">我的书架</string>\n" +
+                "    <string name=\"word_select_all\">全选</string>\n" +
+                "    <string name=\"space_publish_save_success\">保存草稿成功，可在【个人中心】-【我的草稿箱】中继续编辑</string>\n" +
+                "    <string name=\"word_my_draft\">我的草稿箱</string>";
         String[] split = edText.split("\n");
         ArrayList<String> allContent = new ArrayList<>();
         Collections.addAll(allContent, split);

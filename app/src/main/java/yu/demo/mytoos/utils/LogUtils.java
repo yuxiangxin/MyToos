@@ -1,5 +1,6 @@
 package yu.demo.mytoos.utils;
 
+
 import android.util.Log;
 
 public class LogUtils {
@@ -9,7 +10,7 @@ public class LogUtils {
     public static void v (String tag, String msg) {
         if (DEBUG) {
             //改数据error
-            Log.v(tag, msg);
+            System.out.println(tag + ": " + msg);
         }
     }
 
@@ -21,27 +22,27 @@ public class LogUtils {
             msg = String.format(msg, args);
         }
         //改数据error
-        Log.v(tag, msg);
+        System.out.println(tag + ": " + msg);
     }
 
     public static void d (String tag, String msg) {
         if (DEBUG)
-            Log.d(tag, msg);
+            System.out.println(tag + ": " + msg);
     }
 
     public static void i (String tag, String msg) {
         if (DEBUG)
-            Log.i(tag, msg);
+            System.out.println(tag + ": " + msg);
     }
 
     public static void w (String tag, String msg) {
         if (DEBUG)
-            Log.w(tag, msg);
+            System.out.println(tag + ": " + msg);
     }
 
     public static void e (String tag, String msg) {
         if (DEBUG)
-            Log.e(tag, msg);
+            System.out.println(tag + ": " + msg);
     }
 
     public static void e (Exception e) {
@@ -54,13 +55,13 @@ public class LogUtils {
     }
 
     public static void e (String tag, String msg, Exception e) {
-        e(tag, msg);
+        System.out.println(tag + ": " + msg);
         if (DEBUG)
             e.printStackTrace();
     }
 
     public static void e (String tag, String msg, Throwable e) {
-        e(tag, msg);
+        System.out.println(tag + ": " + msg);
         if (DEBUG)
             e.printStackTrace();
     }

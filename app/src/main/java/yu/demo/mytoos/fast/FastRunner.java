@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.UUID;
 
 import yu.demo.mytoos.fast.utils.IOUtil;
 
@@ -17,10 +18,11 @@ import yu.demo.mytoos.fast.utils.IOUtil;
 public class FastRunner {
 
     public static void main (String[] args) {
-        FastRunner fastRunner = new FastRunner("C:\\Users\\Administrator\\Downloads\\demo\\imageEdit\\android-headimage-cliper-master");
+        FastRunner fastRunner = new FastRunner("C:\\Users\\Administrator\\Desktop\\ad\\demo");
         fastRunner.addTask(new BuildGradleFast())
                 .addTask(new GradlePropertiesFast())
                 .addTask(new GradleWrapperPropertiesFast());
+        String string = UUID.randomUUID().toString();
         fastRunner.run();
     }
 

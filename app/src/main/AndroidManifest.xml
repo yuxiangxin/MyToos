@@ -21,6 +21,8 @@
         </activity>
         <activity android:name=".testcloseres.A2Activity">
         </activity>
+        <activity android:name=".WebActivity"/>
+        <activity android:name=".ExplorerAnalyzeActivity"/>
     </application>
 
 </manifest>

@@ -9,12 +9,16 @@ public class WorkLogGenerator {
 
     public static void main (String[] args) {
         ArrayList<WorkLog> workLogs = new ArrayList<>();
-        workLogs.add(new WorkLog("38890", "申请站长实现").setProgress(20));
-        workLogs.add(WorkLog.format("ok:#38951 个人中心增加微信/qq登陆"));
-        workLogs.add(WorkLog.format("ok:#15 增加审核期间隐藏任务零钱包功能"));
+
+        workLogs.add(WorkLog.format("ok:#40121 我的书架支持搜索"));
+        workLogs.add(WorkLog.format("ok:#40149 个人首页增加聊天入口"));
+        workLogs.add(WorkLog.format("ok:#40116 阅读器章节文案统一"));
+        workLogs.add(WorkLog.format("start:#40065 空间站动态详情页增加评论弹幕").setProgress(10));
 
         printWorkLog(workLogs);
 
+
+        //System.out.println("39094".length() << 1);
 
         //#38492 关于卧卧,卧卧号主页,任务详情页分享缓存加载优化
         //发布动态文字2个英文或数字算一个长度

@@ -1,10 +1,10 @@
 package yu.demo.mytoos;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 
-import yu.demo.mytoos.testcloseres.A1Activity;
+import yu.demo.mytoos.explorer.ExplorerAnalyze;
 
 public class MainActivity extends CloseableActivity {
 
@@ -15,7 +15,8 @@ public class MainActivity extends CloseableActivity {
     }
 
     public void toA1 (View view) {
-        startActivity(new Intent(this, A1Activity.class));
+        //startActivity(new Intent(this, WebActivity.class));
+        ExplorerAnalyzeActivity.toNative(this, Environment.getExternalStorageDirectory().getAbsolutePath());
     }
 
 }
